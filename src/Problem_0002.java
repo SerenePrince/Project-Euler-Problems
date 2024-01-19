@@ -1,7 +1,7 @@
 import java.time.Duration;
 import java.time.Instant;
 
-public class Problem_0001 {
+public class Problem_0002 {
 	public static void main(String[] args) {
 		Instant start = Instant.now();
 		solve();
@@ -11,9 +11,15 @@ public class Problem_0001 {
 	}
 
 	private static void solve() {
-		long sum = 0;
-		for (int i = 1; i < 1000; i++) {
-			sum += i % 3 == 0 || i % 5 == 0 ? i : 0;
+		int sum = 0;
+		int x = 1, y = 2;
+		while (x <= 4000000) {
+			if (x % 2 == 0) {
+				sum += x;
+			}
+			int temp = x + y;
+			x = y;
+			y = temp;
 		}
 		System.out.println(sum);
 	}
