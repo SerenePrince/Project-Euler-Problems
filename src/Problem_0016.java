@@ -1,7 +1,8 @@
+import java.math.BigInteger;
 import java.time.Duration;
 import java.time.Instant;
 
-public class Problem_0001 {
+public class Problem_0016 {
 	public static void main(String[] args) {
 		Instant start = Instant.now();
 		solve();
@@ -11,9 +12,10 @@ public class Problem_0001 {
 	}
 
 	private static void solve() {
-		long sum = 0;
-		for (int i = 1; i < 1000; i++) {
-			sum += i % 3 == 0 || i % 5 == 0 ? i : 0;
+		String num = BigInteger.ONE.shiftLeft(1000).toString();
+		int sum = 0;
+		for (int i = 0; i < num.length(); i++) {
+			sum += num.charAt(i) - '0';
 		}
 		System.out.println(sum);
 	}

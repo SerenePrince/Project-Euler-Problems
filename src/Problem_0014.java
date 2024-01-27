@@ -2,6 +2,9 @@ import java.time.Duration;
 import java.time.Instant;
 
 public class Problem_0014 {
+
+	private static long[] memo = new long[1000000];
+
 	public static void main(String[] args) {
 		Instant start = Instant.now();
 		solve();
@@ -22,8 +25,6 @@ public class Problem_0014 {
 		}
 		System.out.println(index);
 	}
-
-	private static long[] memo = new long[1000000];
 
 	private static long collatzSequence(long num) {
 		if (num < memo.length && memo[(int) num] != 0) {

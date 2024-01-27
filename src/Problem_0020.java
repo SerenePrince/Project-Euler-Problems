@@ -1,7 +1,8 @@
+import java.math.BigInteger;
 import java.time.Duration;
 import java.time.Instant;
 
-public class Problem_0001 {
+public class Problem_0020 {
 	public static void main(String[] args) {
 		Instant start = Instant.now();
 		solve();
@@ -11,9 +12,14 @@ public class Problem_0001 {
 	}
 
 	private static void solve() {
+		BigInteger factorial = BigInteger.valueOf(100);
+		for (int i = 99; i > 0; i--) {
+			factorial = factorial.multiply(BigInteger.valueOf(i));
+		}
+		String num = factorial.toString();
 		long sum = 0;
-		for (int i = 1; i < 1000; i++) {
-			sum += i % 3 == 0 || i % 5 == 0 ? i : 0;
+		for (int i = 0; i < num.length(); i++) {
+			sum += Character.getNumericValue(num.charAt(i));
 		}
 		System.out.println(sum);
 	}

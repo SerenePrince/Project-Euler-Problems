@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Problem_0015 {
+
+	private static Map<String, Long> memo = new HashMap<>();
+
 	public static void main(String[] args) {
 		Instant start = Instant.now();
 		solve();
@@ -15,8 +18,6 @@ public class Problem_0015 {
 	private static void solve() {
 		System.out.println(gridPaths(20, 20));
 	}
-
-	private static Map<String, Long> memo = new HashMap<>();
 
 	private static long gridPaths(int row, int column) {
 		String key = row + "," + column;
